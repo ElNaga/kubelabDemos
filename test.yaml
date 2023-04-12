@@ -38,7 +38,7 @@ spec:
   runPolicy: Serial
   source:
       git:
-        ref: master
+        ref: main
         uri: https://github.com/ElNaga/kubelabDemos
       type: Git
   strategy:
