@@ -11,15 +11,11 @@ spec:
   source:
     git:
       ref: master
-      uri: 'https://github.com/openshift/django-ex.git'
+      uri: 'https://github.com/ElNaga/kubelabDemos'
     type: Git
   strategy:
-    sourceStrategy:
-      from:
-        kind: ImageStreamTag
-        name: 'python:3.6'
-        namespace: openshift
-    type: Source
+    dockerStrategy:
+    type: Docker
   triggers:
     - imageChange:
         lastTriggeredImageID: >-
@@ -32,3 +28,26 @@ spec:
     - github:
         secret: fbf26c8ab1804f2d
       type: GitHub
+
+
+# apiVersion: build.openshift.io/v1
+# kind: BuildConfig
+# metadata:
+#   name: my-build-config
+# spec:
+#   runPolicy: Serial
+#   source:
+#       git:
+#         ref: master
+#         uri: https://github.com/ElNaga/kubelabDemos
+#       type: Git
+#   strategy:
+#       dockerStrategy:
+#       type: Docker
+#   output:
+#     to:
+#       kind: ImageStreamTag
+#       name: 'simple-webapp-docker:latest'
+#   triggers:
+#     - type: ConfigChange
+
