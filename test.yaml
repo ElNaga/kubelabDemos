@@ -39,7 +39,7 @@ spec:
   source:
       git:
         ref: main
-        uri: https://github.com/ElNaga/kubelabDemos
+        uri: https://github.com/ElNaga/kubelabDemos.git
       type: Git
   strategy:
       dockerStrategy:
