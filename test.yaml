@@ -33,7 +33,7 @@
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
-  name: my-build-config
+  name: demo-flask-app-10
 spec:
   runPolicy: Serial
   source:
