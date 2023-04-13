@@ -28,12 +28,16 @@
 #     - github:
 #         secret: fbf26c8ab1804f2d
 #       type: GitHub
-
-
+---
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: demo-flask-app-11
+---
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
-  name: demo-flask-app-10
+  name: demo-flask-app-11
 spec:
   runPolicy: Serial
   source:
@@ -47,7 +51,7 @@ spec:
   output:
     to:
       kind: ImageStreamTag
-      name: 'simple-flask-docker:latest'
+      name: 'demo-flask-app-11:latest'
   triggers:
     - type: ConfigChange
 
